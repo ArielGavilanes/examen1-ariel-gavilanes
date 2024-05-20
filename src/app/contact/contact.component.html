@@ -1,0 +1,62 @@
+<form class="grid p-4" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="flex flex-column gap-2 col-12">
+    <label for="nombre_usuario">Name</label>
+    <input
+      pInputText
+      id="name"
+      aria-describedby="name-help"
+      formControlName="name"
+    />
+    <div
+      *ngIf="contactForm.controls['name'].errors?.['required'] && formSubmitted"
+    >
+      <small style="color: red"> Este campo es obligatorio </small>
+    </div>
+  </div>
+  <div class="flex flex-column gap-2 col-12">
+    <label for="email">Email</label>
+    <input
+      pInputText
+      id="email"
+      aria-describedby="email-help"
+      formControlName="email"
+    />
+    <div
+      *ngIf="contactForm.controls['email'].errors?.['required'] && formSubmitted"
+    >
+      <small style="color: red"> Este campo es obligatorio </small>
+    </div>
+    <div
+      *ngIf="contactForm.controls['email'].errors?.['email'] && formSubmitted"
+    >
+      <small style="color: red"> Ingrese un email valido </small>
+    </div>
+  </div>
+  <div class="flex flex-column gap-2 col-12">
+    <label for="message">Message</label>
+    <input
+      pInputText
+      id="message"
+      aria-describedby="message-help"
+      formControlName="message"
+    />
+    <div
+      *ngIf="contactForm.controls['message'].errors?.['required'] && formSubmitted"
+    >
+      <small style="color: red"> Este campo es obligatorio </small>
+    </div>
+    <div
+      *ngIf="contactForm.controls['message'].errors?.['minlength'] && formSubmitted"
+    >
+      <small style="color: red"> Este campo debe tener al menos 10 caracteres </small>
+    </div>
+  </div>
+  <div class="mr-auto ml-auto mt-4">
+    <button
+      pButton
+      class="cursor-pointer border-round text-black-alpha-90 bg-blue-600 text-xl p-3 w-11rem font-semibold align border-transparent justify-content-center col-12"
+    >
+      Enviar
+    </button>
+  </div>
+</form>

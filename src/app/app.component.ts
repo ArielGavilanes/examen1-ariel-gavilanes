@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'examenWeb-Ariel-Gavilanes';
+  title = 'examen1-Ariel-Gavilanes';
+
+  items: MenuItem[] = [
+    {
+      label: 'Home',
+      icon: 'pi pi-envelope',
+      routerLink: '/home',
+    },
+    {
+      label: 'Contact',
+      icon: 'pi pi-envelope',
+      routerLink: '/contact',
+    },
+    {
+      label: 'About',
+      icon: 'pi pi-envelope',
+      routerLink: '/about',
+    },
+    {
+      label: 'Post',
+      icon: 'pi pi-envelope',
+      routerLink: '/posts',
+    },
+  ];
 }

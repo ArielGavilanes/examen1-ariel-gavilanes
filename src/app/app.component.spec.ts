@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'examenWeb-Ariel-Gavilanes'`, () => {
+  it(`should have as title 'examen1-Ariel-Gavilanes'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('examenWeb-Ariel-Gavilanes');
+    expect(app.title).toEqual('examen1-Ariel-Gavilanes');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('examenWeb-Ariel-Gavilanes app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('examen1-Ariel-Gavilanes app is running!');
   });
 });
